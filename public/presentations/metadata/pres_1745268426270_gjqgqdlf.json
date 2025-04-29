@@ -1,0 +1,218 @@
+{
+  "id": "pres_1745268426270_gjqgqdlf",
+  "slides": [
+    {
+      "title": "LSTMs Explained: Unlocking Sequence Memory",
+      "content": "An Introduction to Long Short-Term Memory Networks and their power in processing sequential data.",
+      "layout": "centered",
+      "visualStyle": {
+        "backgroundColor": "#F8FAFC",
+        "titleColor": "#1E3A8A",
+        "contentColor": "#4B5563",
+        "accentColor": "#3B82F6",
+        "fontFamily": "Poppins",
+        "imagePosition": null,
+        "transition": "fade"
+      }
+    },
+    {
+      "title": "The Challenge: Why Standard RNNs Fall Short",
+      "content": "Traditional Recurrent Neural Networks (RNNs) struggle to learn long-range dependencies.\n\nKey Problem: Vanishing / Exploding Gradients. Error signals diminish or blow up over long sequences, hindering learning.",
+      "layout": "two-column",
+      "visualStyle": {
+        "backgroundColor": "#FFFFFF",
+        "titleColor": "#111827",
+        "contentColor": "#374151",
+        "accentColor": "#EF4444",
+        "fontFamily": "Inter",
+        "imagePosition": "right",
+        "transition": "slide"
+      }
+    },
+    {
+      "title": "Introducing LSTM: A Solution for Memory",
+      "content": "Long Short-Term Memory (LSTM) networks, introduced by Hochreiter & Schmidhuber (1997), are a special kind of RNN capable of learning long-term dependencies.\n\nThey were explicitly designed to avoid the long-term dependency problem.",
+      "layout": "image-left",
+      "visualStyle": {
+        "backgroundColor": "#EFF6FF",
+        "titleColor": "#1E3A8A",
+        "contentColor": "#374151",
+        "accentColor": "#10B981",
+        "fontFamily": "Inter",
+        "imagePosition": "left",
+        "transition": "fade"
+      }
+    },
+    {
+      "title": "The Core Idea: Cell State & Gates",
+      "content": "LSTMs introduce a 'Cell State' - a conveyor belt running through the entire chain, allowing information to flow largely unchanged.\n\n'Gates' act as regulators, controlling the addition or removal of information to the cell state.",
+      "layout": "centered",
+      "visualStyle": {
+        "backgroundColor": "#FFFFFF",
+        "titleColor": "#0F172A",
+        "contentColor": "#4B5563",
+        "accentColor": "#F59E0B",
+        "fontFamily": "Inter",
+        "imagePosition": null,
+        "transition": "slide"
+      }
+    },
+    {
+      "title": "LSTM Unit Architecture Overview",
+      "content": "An LSTM unit is composed of:\n1.  **Cell State (Ct):** Stores long-term memory.\n2.  **Hidden State (ht):** Output at the current time step, also used for short-term memory.\n3.  **Gates:** Forget Gate, Input Gate, Output Gate.",
+      "layout": "image-right",
+      "visualStyle": {
+        "backgroundColor": "#F8FAFC",
+        "titleColor": "#1E3A8A",
+        "contentColor": "#374151",
+        "accentColor": "#3B82F6",
+        "fontFamily": "Inter",
+        "imagePosition": "right",
+        "transition": "fade"
+      }
+    },
+    {
+      "title": "Gate 1: The Forget Gate (ft)",
+      "content": "Purpose: Decides what information to throw away from the cell state.\n\nMechanism: Looks at the previous hidden state (ht-1) and current input (xt). Outputs a number between 0 (completely forget) and 1 (completely keep) for each number in the previous cell state (Ct-1). Uses a sigmoid function.",
+      "layout": "two-column",
+      "visualStyle": {
+        "backgroundColor": "#FFFFFF",
+        "titleColor": "#111827",
+        "contentColor": "#4B5563",
+        "accentColor": "#EC4899",
+        "fontFamily": "Inter",
+        "imagePosition": "left",
+        "transition": "slide"
+      }
+    },
+    {
+      "title": "Gate 2: The Input Gate (it)",
+      "content": "Purpose: Decides which new information to store in the cell state.\n\nMechanism:\n1.  Sigmoid layer ('Input Gate Layer'): Decides which values to update (0 or 1).\n2.  Tanh layer: Creates a vector of new candidate values (C̃t) to be potentially added.\nThese are combined to update the state.",
+      "layout": "two-column",
+      "visualStyle": {
+        "backgroundColor": "#F8FAFC",
+        "titleColor": "#1E3A8A",
+        "contentColor": "#374151",
+        "accentColor": "#F59E0B",
+        "fontFamily": "Inter",
+        "imagePosition": "right",
+        "transition": "fade"
+      }
+    },
+    {
+      "title": "Updating the Cell State (Ct)",
+      "content": "The old cell state (Ct-1) is updated to the new cell state (Ct) in two steps:\n\n1.  Multiply Ct-1 by ft (forgetting things decided earlier).\n2.  Add it * C̃t (adding the new candidate values, scaled by how much to update them).",
+      "layout": "centered",
+      "visualStyle": {
+        "backgroundColor": "#EFF6FF",
+        "titleColor": "#1E3A8A",
+        "contentColor": "#374151",
+        "accentColor": "#10B981",
+        "fontFamily": "Inter",
+        "imagePosition": null,
+        "transition": "zoom"
+      }
+    },
+    {
+      "title": "Gate 3: The Output Gate (ot)",
+      "content": "Purpose: Decides what to output as the hidden state (ht).\n\nMechanism:\n1.  Sigmoid layer: Decides which parts of the cell state to output.\n2.  Pass the (updated) cell state through tanh (pushes values between -1 and 1).\n3.  Multiply the tanh output by the sigmoid output.",
+      "layout": "two-column",
+      "visualStyle": {
+        "backgroundColor": "#FFFFFF",
+        "titleColor": "#111827",
+        "contentColor": "#4B5563",
+        "accentColor": "#8B5CF6",
+        "fontFamily": "Inter",
+        "imagePosition": "left",
+        "transition": "slide"
+      }
+    },
+    {
+      "title": "Applications: Language & Speech",
+      "content": "LSTMs excel in tasks involving sequential language data:\n\n*   **Machine Translation:** Understanding context for accurate translation.\n*   **Sentiment Analysis:** Capturing nuances over longer reviews/texts.\n*   **Speech Recognition:** Modeling audio sequences over time.",
+      "layout": "image-left",
+      "visualStyle": {
+        "backgroundColor": "#F8FAFC",
+        "titleColor": "#1E3A8A",
+        "contentColor": "#374151",
+        "accentColor": "#3B82F6",
+        "fontFamily": "Inter",
+        "imagePosition": "left",
+        "transition": "fade"
+      }
+    },
+    {
+      "title": "Applications: Time Series & Generation",
+      "content": "Beyond language, LSTMs are powerful for:\n\n*   **Time Series Forecasting:** Predicting stock prices, weather patterns, energy demand.\n*   **Music Generation:** Composing music by learning patterns in sequences of notes.\n*   **Handwriting Recognition:** Analyzing sequences of pen movements.",
+      "layout": "image-right",
+      "visualStyle": {
+        "backgroundColor": "#FFFFFF",
+        "titleColor": "#0F172A",
+        "contentColor": "#4B5563",
+        "accentColor": "#10B981",
+        "fontFamily": "Inter",
+        "imagePosition": "right",
+        "transition": "slide"
+      }
+    },
+    {
+      "title": "Advantages of LSTMs",
+      "content": "*   **Long-Range Dependency Learning:** Their core strength.\n*   **Mitigation of Gradient Problems:** Gates help maintain a healthy gradient flow.\n*   **Robustness:** Effective across a wide variety of sequential data tasks.\n*   **Statefulness:** Can maintain information over extended periods.",
+      "layout": "centered",
+      "visualStyle": {
+        "backgroundColor": "#EFF6FF",
+        "titleColor": "#1E3A8A",
+        "contentColor": "#374151",
+        "accentColor": "#10B981",
+        "fontFamily": "Poppins",
+        "imagePosition": null,
+        "transition": "fade"
+      }
+    },
+    {
+      "title": "Limitations and Alternatives",
+      "content": "**Limitations:**\n*   **Complexity:** More complex than simple RNNs or GRUs.\n*   **Computational Cost:** Can be slow to train due to the number of parameters and sequential nature.\n\n**Popular Alternative:**\n*   **GRU (Gated Recurrent Unit):** A simpler variant with fewer gates (Update and Reset), often performs comparably.",
+      "layout": "two-column",
+      "visualStyle": {
+        "backgroundColor": "#F8FAFC",
+        "titleColor": "#111827",
+        "contentColor": "#4B5563",
+        "accentColor": "#F59E0B",
+        "fontFamily": "Inter",
+        "imagePosition": null,
+        "transition": "slide"
+      }
+    },
+    {
+      "title": "Conclusion: The Power of Memory",
+      "content": "LSTMs represent a significant advancement in sequence modeling.\n\nBy using a dedicated cell state and regulatory gates, they effectively capture long-term dependencies, making them invaluable for numerous AI applications involving sequential data.",
+      "layout": "centered",
+      "visualStyle": {
+        "backgroundColor": "#1E3A8A",
+        "titleColor": "#FFFFFF",
+        "contentColor": "#E5E7EB",
+        "accentColor": "#F59E0B",
+        "fontFamily": "Poppins",
+        "imagePosition": null,
+        "transition": "fade"
+      }
+    }
+  ],
+  "style": {
+    "themeName": "Modern Minimal",
+    "name": "Modern Minimal",
+    "colors": {
+      "primary": "2563EB",
+      "secondary": "3B82F6",
+      "text": "1F2937",
+      "background": "FFFFFF"
+    },
+    "fonts": {
+      "title": "Arial",
+      "content": "Helvetica"
+    }
+  },
+  "downloadUrl": "/presentations/lstm-1745268426269.zip",
+  "usedFallback": true,
+  "requirements": null
+}

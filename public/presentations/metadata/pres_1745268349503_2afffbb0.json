@@ -1,0 +1,204 @@
+{
+  "id": "pres_1745268349503_2afffbb0",
+  "slides": [
+    {
+      "title": "Understanding Generative AI",
+      "content": "Exploring the Power and Potential of AI That Creates",
+      "layout": "centered",
+      "visualStyle": {
+        "backgroundColor": "#F8F9FA",
+        "titleColor": "#1E40AF",
+        "contentColor": "#374151",
+        "accentColor": "#3B82F6",
+        "fontFamily": "'Inter', sans-serif",
+        "imagePosition": null,
+        "transition": "fade"
+      }
+    },
+    {
+      "title": "What is Generative AI?",
+      "content": "Generative AI (GenAI) refers to a class of artificial intelligence models capable of generating novel content, such as text, images, audio, code, and synthetic data.\n\nUnlike traditional AI that analyzes or classifies data, GenAI *creates* new data instances that resemble the data it was trained on.",
+      "layout": "two-column",
+      "visualStyle": {
+        "backgroundColor": "#FFFFFF",
+        "titleColor": "#1E40AF",
+        "contentColor": "#1F2937",
+        "accentColor": "#3B82F6",
+        "fontFamily": "'Inter', sans-serif",
+        "imagePosition": "right",
+        "transition": "slide"
+      }
+    },
+    {
+      "title": "How Does GenAI Work?",
+      "content": "GenAI models learn patterns and structures from massive datasets.\n\n**Key Technologies:**\n- **Transformers:** Architectures excelling at understanding context and relationships in sequential data (like text).\n- **Generative Adversarial Networks (GANs):** Two neural networks (generator and discriminator) compete to create realistic outputs (often used for images).\n- **Variational Autoencoders (VAEs):** Learn compressed representations of data to generate new variations.",
+      "layout": "two-column",
+      "visualStyle": {
+        "backgroundColor": "#F8F9FA",
+        "titleColor": "#1E40AF",
+        "contentColor": "#1F2937",
+        "accentColor": "#3B82F6",
+        "fontFamily": "'Inter', sans-serif",
+        "imagePosition": null,
+        "transition": "slide"
+      }
+    },
+    {
+      "title": "Key Capabilities",
+      "content": "GenAI can generate diverse types of content:\n\n- **Text:** Writing articles, emails, summaries, creative stories, dialogue.\n- **Images:** Creating realistic photos, art, illustrations from descriptions.\n- **Code:** Generating code snippets, completing functions, debugging.\n- **Audio:** Synthesizing speech, composing music, creating sound effects.\n- **Video:** Generating short video clips, animations (emerging).\n- **Data:** Creating synthetic datasets for training other AI models.",
+      "layout": "image-left",
+      "visualStyle": {
+        "backgroundColor": "#FFFFFF",
+        "titleColor": "#1E40AF",
+        "contentColor": "#1F2937",
+        "accentColor": "#3B82F6",
+        "fontFamily": "'Inter', sans-serif",
+        "imagePosition": "left",
+        "transition": "slide"
+      }
+    },
+    {
+      "title": "Applications: Text Generation",
+      "content": "Revolutionizing communication and content creation:\n\n- **Content Marketing:** Drafting blog posts, ad copy, social media updates.\n- **Customer Service:** Powering sophisticated chatbots and virtual assistants.\n- **Summarization:** Condensing long documents or articles.\n- **Translation:** Providing more nuanced and context-aware translations.\n- **Creative Writing:** Assisting authors with brainstorming and drafting.",
+      "layout": "two-column",
+      "visualStyle": {
+        "backgroundColor": "#F8F9FA",
+        "titleColor": "#1E40AF",
+        "contentColor": "#1F2937",
+        "accentColor": "#3B82F6",
+        "fontFamily": "'Inter', sans-serif",
+        "imagePosition": null,
+        "transition": "slide"
+      }
+    },
+    {
+      "title": "Applications: Image & Art",
+      "content": "Transforming visual design and creativity:\n\n- **Graphic Design:** Generating logos, icons, and illustrations.\n- **Marketing:** Creating unique ad visuals and campaign assets.\n- **Entertainment:** Concept art for games and films.\n- **Product Design:** Visualizing prototypes and variations.\n- **Personalized Art:** Creating custom artwork based on user prompts.",
+      "layout": "image-right",
+      "visualStyle": {
+        "backgroundColor": "#FFFFFF",
+        "titleColor": "#1E40AF",
+        "contentColor": "#1F2937",
+        "accentColor": "#3B82F6",
+        "fontFamily": "'Inter', sans-serif",
+        "imagePosition": "right",
+        "transition": "slide"
+      }
+    },
+    {
+      "title": "Applications: Code Generation",
+      "content": "Accelerating software development:\n\n- **Code Completion & Suggestion:** Intelligent auto-complete features.\n- **Boilerplate Code:** Generating repetitive code structures.\n- **Debugging Assistance:** Identifying potential errors and suggesting fixes.\n- **Natural Language to Code:** Translating plain language descriptions into code.\n- **Test Case Generation:** Automating the creation of software tests.",
+      "layout": "two-column",
+      "visualStyle": {
+        "backgroundColor": "#F8F9FA",
+        "titleColor": "#1E40AF",
+        "contentColor": "#1F2937",
+        "accentColor": "#3B82F6",
+        "fontFamily": "'Inter', sans-serif",
+        "imagePosition": null,
+        "transition": "slide"
+      }
+    },
+    {
+      "title": "Applications: Audio & Music",
+      "content": "Innovating in sound and music creation:\n\n- **Text-to-Speech:** Generating natural-sounding voices for various applications.\n- **Music Composition:** Creating original music tracks in different styles.\n- **Sound Effects:** Generating custom sound effects for media.\n- **Voice Cloning:** Replicating voices (requires ethical considerations).\n- **Audio Enhancement:** Improving audio quality.",
+      "layout": "image-left",
+      "visualStyle": {
+        "backgroundColor": "#FFFFFF",
+        "titleColor": "#1E40AF",
+        "contentColor": "#1F2937",
+        "accentColor": "#3B82F6",
+        "fontFamily": "'Inter', sans-serif",
+        "imagePosition": "left",
+        "transition": "slide"
+      }
+    },
+    {
+      "title": "Benefits of Generative AI",
+      "content": "- **Increased Efficiency & Productivity:** Automating repetitive creative and technical tasks.\n- **Enhanced Creativity:** Providing tools for inspiration and rapid prototyping.\n- **Personalization:** Tailoring content and experiences at scale.\n- **Accessibility:** Lowering barriers to content creation and coding.\n- **Innovation:** Enabling new products, services, and scientific discoveries.",
+      "layout": "centered",
+      "visualStyle": {
+        "backgroundColor": "#F8F9FA",
+        "titleColor": "#1E40AF",
+        "contentColor": "#1F2937",
+        "accentColor": "#3B82F6",
+        "fontFamily": "'Inter', sans-serif",
+        "imagePosition": null,
+        "transition": "fade"
+      }
+    },
+    {
+      "title": "Challenges & Risks",
+      "content": "Navigating the complexities of GenAI:\n\n- **Bias & Fairness:** Models can inherit and amplify biases present in training data.\n- **Misinformation & Malicious Use:** Potential for generating fake news, deepfakes, and spam.\n- **Copyright & Ownership:** Unclear legal status of AI-generated content.\n- **Job Displacement:** Automation concerns for certain creative and analytical roles.\n- **Computational Cost:** Training large models requires significant resources.",
+      "layout": "two-column",
+      "visualStyle": {
+        "backgroundColor": "#FFFFFF",
+        "titleColor": "#1E40AF",
+        "contentColor": "#1F2937",
+        "accentColor": "#D97706",
+        "fontFamily": "'Inter', sans-serif",
+        "imagePosition": null,
+        "transition": "slide"
+      }
+    },
+    {
+      "title": "Ethical Considerations",
+      "content": "\"With great power comes great responsibility. Developing and deploying Generative AI requires careful consideration of its societal impact.\"\n\nKey areas:\n- Transparency & Explainability\n- Accountability & Governance\n- Data Privacy & Security\n- Preventing Harmful Outputs\n- Ensuring Equitable Access",
+      "layout": "quote",
+      "visualStyle": {
+        "backgroundColor": "#E0E7FF",
+        "titleColor": "#1E40AF",
+        "contentColor": "#1F2937",
+        "accentColor": "#3B82F6",
+        "fontFamily": "'Inter', sans-serif",
+        "imagePosition": null,
+        "transition": "fade"
+      }
+    },
+    {
+      "title": "The Future of Generative AI",
+      "content": "What's next?\n\n- **Multimodal Models:** Seamlessly integrating text, image, audio, and other data types.\n- **Improved Control & Customization:** More fine-grained control over generated outputs.\n- **Real-time Generation:** Faster, more interactive applications.\n- **Integration into Workflows:** Becoming standard tools across industries.\n- **Advancements in Reasoning:** Moving beyond pattern matching towards deeper understanding.",
+      "layout": "image-right",
+      "visualStyle": {
+        "backgroundColor": "#F8F9FA",
+        "titleColor": "#1E40AF",
+        "contentColor": "#1F2937",
+        "accentColor": "#3B82F6",
+        "fontFamily": "'Inter', sans-serif",
+        "imagePosition": "right",
+        "transition": "slide"
+      }
+    },
+    {
+      "title": "Conclusion & Q&A",
+      "content": "Generative AI is a transformative technology with the potential to reshape industries and enhance human capabilities.\n\nUnderstanding its potential, applications, and challenges is crucial for responsible adoption and innovation.\n\n**Questions?**",
+      "layout": "centered",
+      "visualStyle": {
+        "backgroundColor": "#FFFFFF",
+        "titleColor": "#1E40AF",
+        "contentColor": "#374151",
+        "accentColor": "#3B82F6",
+        "fontFamily": "'Inter', sans-serif",
+        "imagePosition": null,
+        "transition": "zoom"
+      }
+    }
+  ],
+  "style": {
+    "themeName": "Modern Minimal",
+    "name": "Modern Minimal",
+    "colors": {
+      "primary": "2563EB",
+      "secondary": "3B82F6",
+      "text": "1F2937",
+      "background": "FFFFFF"
+    },
+    "fonts": {
+      "title": "Arial",
+      "content": "Helvetica"
+    }
+  },
+  "downloadUrl": "/presentations/genai-1745268349502.zip",
+  "usedFallback": true,
+  "requirements": null
+}

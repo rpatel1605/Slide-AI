@@ -5,8 +5,29 @@ import { createSimplePresentation } from "@/lib/simple-presentation-generator"
 import { writeFileSync } from "fs"
 import { join } from "path"
 
+
 // Directory to store generated presentations
 const PRESENTATIONS_DIR = join(process.cwd(), "public", "presentations")
+
+async function fetchGoogleSearchResults(query: string): Promise<string> {
+  const apiKey = "AIzaSyBvzBfQMnvXmLmllrxDWy_3dPil3Hcjo64";
+  const cx = "31efa1d6688854443";
+  const url = `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${cx}&q=${encodeURIComponent(query)}`;
+
+  const response = await fetch(url);
+  const data = await response.json();
+
+  if (!data.items || data.items.length === 0) {
+    return "No useful results found on Google.";
+  }
+
+  // Summarize top 3 results
+  return data.items
+    .slice(0, 3)
+    .map((item: any) => `Title: ${item.title}\nSnippet: ${item.snippet}`)
+    .join("\n\n");
+}
+
 
 export async function POST(request: NextRequest) {
   try {
@@ -35,14 +56,25 @@ export async function POST(request: NextRequest) {
     const requirementsText = requirements ? `\nInclude the following specific requirements: ${requirements}` : ""
 
     // Generate presentation content using Gemini API
-    const prompt = `${promptPrefix} presentation about "${topic}". 
-    Format your response as a JSON array of slide objects, where each slide has a "title" and "content" property.
-    Include an introduction slide, ${slideCount} content slides with key points, and a conclusion slide.
-    Make the content informative, well-structured, and suitable for a professional presentation.
-    Keep each slide's content concise but informative.${requirementsText}
-    IMPORTANT: Your response must be a valid JSON array that can be parsed with JSON.parse().`
+    const prompt = `${promptPrefix} give detailed 4-5 lines per title  presentation about ${topic}.  
+(search from net if required )Format your response as a JSON array of slide objects, where each slide has a "title" and "content" property.  
+Include an introduction slide, ${slideCount} slides with key points, and a conclusion slide.  
+Make the content informative, well-structured, and suitable for a professional presentation.  
+Keep each slide's content concise but informative.  More info about the topic is ->${requirementsText}
+IMPORTANT: Your response must be a valid JSON array that can be parsed with JSON.parse()
+    `
 
-    const presentationContent = await generateWithGemini(prompt)
+    let presentationContent = await generateWithGemini(prompt);
+    console.log(presentationContent);
+
+// Fallback to Google Search if Gemini fails or returns weak content
+if (!presentationContent || presentationContent.length < 3) {
+  const searchSummary = await fetchGoogleSearchResults(topic);
+  const fallbackPrompt = `${promptPrefix} presentation about "${topic}". Based on the following extracted Google search results:\n\n${searchSummary}\n\nFormat your response as a JSON array of slide objects, where each slide has a "title" and "content" property. ${requirementsText}`;
+
+  presentationContent = await generateWithGemini(fallbackPrompt);
+}
+
 
     // Parse the AI response
     let slides
@@ -123,10 +155,15 @@ export async function POST(request: NextRequest) {
 
     // Save the file locally
     try {
-      writeFileSync(filePath, pptxBuffer)
+      // Convert ArrayBuffer to Buffer if needed
+      const nodeBuffer = pptxBuffer instanceof ArrayBuffer 
+        ? Buffer.from(new Uint8Array(pptxBuffer))
+        : pptxBuffer;
+      
+      writeFileSync(filePath, nodeBuffer);
     } catch (error) {
-      console.error("Error saving presentation file:", error)
-      return NextResponse.json({ error: "Failed to save presentation file" }, { status: 500 })
+      console.error("Error saving presentation file:", error);
+      return NextResponse.json({ error: "Failed to save presentation file" }, { status: 500 });
     }
 
     // Generate a unique ID for this presentation
